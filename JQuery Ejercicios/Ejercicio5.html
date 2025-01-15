@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <input type="text">
+        <input class="btn" type="submit" name="Añadir"></input>
+    </form>
+    <ul>
+        
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        const input = $("input[type=text]");
+        const ul = $("ul");
+        const button = $("input[type=submit]");
+        
+        $(function(){
+            button.on("click", function(e){
+                e.preventDefault();
+                let li = $("<li></li>");
+                let texto = input.val();
+                if(texto.trim() != ""){
+                    // console.log(texto);
+                    li.text(texto);
+                    ul.append(li);
+                    input.val("").focus();
+                    li.on("click", function(){
+                        $(this).remove();
+                    });
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>

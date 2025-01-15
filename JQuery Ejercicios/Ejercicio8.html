@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">Anterior</button>
+    <img src="./fotos/1.png" alt="">
+    <img src="./fotos/2.png" alt="">
+    <img src="./fotos/1.png" alt="">
+    <img src="./fotos/2.png" alt="">
+    <img src="./fotos/1.png" alt="">
+    <img src="./fotos/2.png" alt="">
+    <button id="btn2">Siguiente</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            const imagenes = $("img");
+            let indiceActual = 0;
+            imagenes.hide();
+            $(imagenes[indiceActual]).show();
+
+            $("#btn1").on("click", function(){
+                $(imagenes[indiceActual]).hide();
+                indiceActual = (indiceActual - 1)%imagenes.length;
+                console.log(indiceActual);
+                $(imagenes[indiceActual]).show();
+            })
+
+            $("#btn2").on("click", function(){
+                $(imagenes[indiceActual]).hide();
+                indiceActual = (indiceActual + 1)%imagenes.length;
+                console.log(indiceActual);
+                $(imagenes[indiceActual]).show();
+            })
+        })
+    </script>
+</body>
+</html>

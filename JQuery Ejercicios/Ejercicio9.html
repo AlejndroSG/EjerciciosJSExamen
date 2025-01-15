@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        const ul = $("<ul></ul>");
+        $("body").append(ul);
+        for (let index = 1; index < 6; index++) {
+            let li = $(`<li>${index}</li>`);
+            ul.append(li);
+        }
+
+        $("li").on("mouseover", function(){
+            $(this).css("backgroundColor", "blue")
+        })
+        $("li").on("mouseleave", function(){
+            $(this).css("backgroundColor", "none")
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="../fotos/2.png" alt="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // let tope = 100;
+        let lefte = 100;
+        setInterval(function(){
+            $("img").animate({
+                "right":"0"
+            }).animate({
+                "right":"1000"
+            })
+        },1000)
+    </script>
+</body>
+</html>
