@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            transition: all 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $("body").append("<div></div>");
+        $(function(){
+            var angulo = 0;
+            setInterval(function () {
+                angulo += 360;
+                $("div").css({
+                    'transform': `rotate(${angulo}deg)`
+                }, 50);
+            }, 2000);
+        })
+    </script>
+</body>
+
+</html>

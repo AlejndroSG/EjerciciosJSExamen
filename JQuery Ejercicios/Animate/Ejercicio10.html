@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 50px;
+            background-color: black;
+            width: 0;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $("body").append("<div></div>").append("<button>Progreso</button>");
+        let tamaño = 0;
+        $("button").on("click", function(){
+            tamaño+=100;
+            $("div").animate({
+                "width": tamaño
+            })
+        })
+    </script>
+</body>
+</html>
